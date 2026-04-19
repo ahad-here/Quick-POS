@@ -38,4 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Sign Up button functionality
+    const signupBtn = document.querySelector('.signup-btn');
+    if (signupBtn) {
+        signupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Sign Up feature coming soon!');
+        });
+    }
 });
