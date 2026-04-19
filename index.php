@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,20 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-    <!-- NAVIGATION BAR -->
-    <?php include 'includes/header.php'; ?>
 
-    <!-- HERO SECTION -->
-    <?php include 'includes/hero.php'; ?>
+<body>
+    <main>
+        <!-- NAVIGATION BAR -->
+        <?php include 'includes/header.php'; ?>
+
+        <!-- HERO SECTION -->
+        <?php include 'includes/hero.php'; ?>
+    </main>
+
+    <?php include 'includes/footer.php'; ?>
 
     <script src="assets/js/main.js"></script>
 </body>
+
 
 </html>
