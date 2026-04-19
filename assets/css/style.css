@@ -74,6 +74,16 @@ body {
     z-index: 1;
 }
 
+/* POS-58: Main headline */
+.hero-text h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.8px;
+}
+
 /* ===== NAVIGATION BAR ===== */
 nav {
     position: sticky;
