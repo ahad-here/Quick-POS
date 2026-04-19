@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +14,18 @@
 </head>
 <body>
     <!-- NAVIGATION BAR -->
-    <?php include 'includes/header.php'; ?>
+    <?php include __DIR__ . '/includes/header.php'; ?>
 
-    <!-- HERO SECTION -->
-    <?php include 'includes/hero.php'; ?>
+    <main>
+        <!-- HERO SECTION -->
+        <?php include __DIR__ . '/includes/hero.php'; ?>
+
+        <!-- FEATURES SECTION -->
+        <?php include __DIR__ . '/includes/features.php'; ?>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <?php include __DIR__ . '/includes/footer.php'; ?>
 
     <script src="assets/js/main.js"></script>
 </body>
