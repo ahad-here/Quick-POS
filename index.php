@@ -22,6 +22,9 @@
 
         <!-- FEATURES SECTION -->
         <?php include 'includes/features.php'; ?>
+
+        <!-- PRICING SECTION -->
+        <?php include 'includes/pricing.php'; ?>
     </main>
 
     <?php include 'includes/footer.php'; ?>

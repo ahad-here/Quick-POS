@@ -39,6 +39,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Billing Toggle Functionality
+    const billingToggle = document.getElementById('billing-toggle');
+    const monthlyLabel = document.getElementById('monthly-label');
+    const yearlyLabel = document.getElementById('yearly-label');
+    const priceAmounts = document.querySelectorAll('.price-amount');
+    const periods = document.querySelectorAll('.period');
+
+    if (billingToggle) {
+        billingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                // Yearly billing
+                monthlyLabel.classList.remove('active');
+                yearlyLabel.classList.add('active');
+                priceAmounts.forEach(price => {
+                    price.textContent = price.getAttribute('data-yearly');
+                });
+                periods.forEach(period => {
+                    period.textContent = '/yr';
+                });
+            } else {
+                // Monthly billing
+                yearlyLabel.classList.remove('active');
+                monthlyLabel.classList.add('active');
+                priceAmounts.forEach(price => {
+                    price.textContent = price.getAttribute('data-monthly');
+                });
+                periods.forEach(period => {
+                    period.textContent = '/mo';
+                });
+            }
+        });
+    }
+
     // Sign Up button functionality
     const signupBtn = document.querySelector('.signup-btn');
     if (signupBtn) {
