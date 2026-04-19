@@ -277,6 +277,27 @@
             line-height: 1.6;
         }
 
+        .hero-btn {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            background-color: #ea580c;
+            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+            transform: translateY(-2px);
+        }
+
         .hero-image-container {
             flex: 1;
             display: flex;

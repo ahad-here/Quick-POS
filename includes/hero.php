@@ -5,6 +5,7 @@
             <p class="hero-subheadline">
                 Streamline your checkout, track inventory effortlessly, and multiply your sales with our modern, intuitive software designed for fast-growing businesses.
             </p>
+            <a href="#contact" class="hero-btn">Get Started for Free</a>
         </div>
         <div class="hero-image-container">
             <!-- Mockup image will go here -->
