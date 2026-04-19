@@ -11,11 +11,13 @@
 </head>
 
 <body>
-    <!-- NAVIGATION BAR -->
-    <?php include 'includes/header.php'; ?>
+    <main>
+        <!-- NAVIGATION BAR -->
+        <?php include 'includes/header.php'; ?>
 
-    <!-- HERO SECTION -->
-    <?php include 'includes/hero.php'; ?>
+        <!-- HERO SECTION -->
+        <?php include 'includes/hero.php'; ?>
+    </main>
 
     <?php include 'includes/footer.php'; ?>
 
