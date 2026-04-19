@@ -13,12 +13,15 @@
 
 
 <body>
-    <main>
-        <!-- NAVIGATION BAR -->
-        <?php include 'includes/header.php'; ?>
+    <!-- NAVIGATION BAR -->
+    <?php include 'includes/header.php'; ?>
 
+    <main>
         <!-- HERO SECTION -->
         <?php include 'includes/hero.php'; ?>
+
+        <!-- FEATURES SECTION -->
+        <?php include 'includes/features.php'; ?>
     </main>
 
     <?php include 'includes/footer.php'; ?>
