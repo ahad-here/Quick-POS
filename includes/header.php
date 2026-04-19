@@ -1,7 +1,7 @@
 <nav id="navbar">
     <div class="navbar">
         <!-- Logo -->
-        <div id="logo-container"></div>
+        <a href="#" class="logo">QuickPOS</a>
 
         <!-- Navigation Menu -->
         <ul class="nav-menu" id="nav-menu-container">
