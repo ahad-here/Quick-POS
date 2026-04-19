@@ -12,6 +12,15 @@
                 <a href="https://instagram.com/quickpos" class="social-icon" title="Instagram">📷</a>
             </div>
         </div>
+
+        <!-- Links Section -->
+        <!-- POS-79: Add quick links section -->
+        <div class="footer-links">
+            <a href="#features" class="footer-link">Features</a>
+            <a href="#pricing" class="footer-link">Pricing</a>
+            <a href="#privacy" class="footer-link">Privacy Policy</a>
+            <a href="#terms" class="footer-link">Terms of Service</a>
+        </div>
     </div>
 
     <div class="footer-bottom">
