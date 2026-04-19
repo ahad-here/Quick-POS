@@ -25,6 +25,9 @@
 
         <!-- PRICING SECTION -->
         <?php include 'includes/pricing.php'; ?>
+
+        <!-- CONTACT SECTION -->
+        <?php include 'includes/contact.php'; ?>
     </main>
 
     <?php include 'includes/footer.php'; ?>
