@@ -262,6 +262,14 @@
             max-width: 600px;
         }
 
+        .hero-headline {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
         .hero-image-container {
             flex: 1;
             display: flex;
