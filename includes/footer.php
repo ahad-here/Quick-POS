@@ -8,7 +8,7 @@
             <div class="social-links">
                 <a href="https://facebook.com/quickpos" class="social-icon" title="Facebook">f</a>
                 <a href="https://twitter.com/quickpos" class="social-icon" title="Twitter">𝕏</a>
-                <a href="https://linkedin.com/company/quickpos" class="social-icon" title="in">in</a>
+                <a href="https://linkedin.com/company/quickpos" class="social-icon" title="LinkedIn">in</a>
                 <a href="https://instagram.com/quickpos" class="social-icon" title="Instagram">📷</a>
             </div>
         </div>
