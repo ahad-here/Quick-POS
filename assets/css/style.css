@@ -26,6 +26,71 @@ body {
     line-height: 1.6;
 }
 
+/* ===== FOOTER SECTION ===== */
+/* POS-76: Create footer container with dark background */
+footer {
+    background: linear-gradient(90deg, #0f172a 0%, #1a2f5a 100%);
+    color: var(--white);
+    padding: 2.5rem 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.footer-logo:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(14, 165, 233, 0.1);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-weight: 500;
+}
+
 /* ===== HERO SECTION ===== */
 /* POS-57: Full-width hero container */
 .hero {
@@ -435,13 +500,26 @@ nav.scrolled {
 }
 
 /* Individual bar widths per card */
-.metric-card:nth-child(1) .metric-bar-fill { width: 85%; }
-.metric-card:nth-child(2) .metric-bar-fill { width: 72%; }
-.metric-card:nth-child(3) .metric-bar-fill { width: 90%; }
-.metric-card:nth-child(4) .metric-bar-fill { width: 65%; }
+.metric-card:nth-child(1) .metric-bar-fill {
+    width: 85%;
+}
+
+.metric-card:nth-child(2) .metric-bar-fill {
+    width: 72%;
+}
+
+.metric-card:nth-child(3) .metric-bar-fill {
+    width: 90%;
+}
+
+.metric-card:nth-child(4) .metric-bar-fill {
+    width: 65%;
+}
 
 @keyframes fillBar {
-    from { width: 0%; }
+    from {
+        width: 0%;
+    }
 }
 
 /* ===== HERO RESPONSIVE BREAKPOINTS ===== */
