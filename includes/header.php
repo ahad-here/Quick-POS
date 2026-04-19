@@ -3,8 +3,10 @@
         <!-- Logo -->
         <a href="#" class="logo">QuickPOS</a>
 
-        <!-- Navigation Menu -->
         <ul class="nav-menu" id="nav-menu-container">
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#pricing" class="nav-link">Pricing</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
 
         <!-- Hamburger Menu -->
