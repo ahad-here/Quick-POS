@@ -3,8 +3,6 @@
         <!-- Brand Section -->
         <div class="footer-brand">
             <a href="#" class="footer-logo">QuickPOS</a>
-            <!-- POS-77: Add social media icons -->
-            <!-- POS-78: Link social icons to actual pages -->
             <div class="social-links">
                 <a href="https://facebook.com/quickpos" class="social-icon" title="Facebook">f</a>
                 <a href="https://twitter.com/quickpos" class="social-icon" title="Twitter">𝕏</a>
@@ -14,7 +12,6 @@
         </div>
 
         <!-- Links Section -->
-        <!-- POS-79: Add quick links section -->
         <div class="footer-links">
             <a href="#features" class="footer-link">Features</a>
             <a href="#pricing" class="footer-link">Pricing</a>
