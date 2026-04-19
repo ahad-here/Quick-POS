@@ -302,6 +302,20 @@
             flex: 1;
             display: flex;
             justify-content: flex-end;
+            position: relative;
+        }
+
+        .hero-mockup {
+            max-width: 130%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-mockup:hover {
+            transform: perspective(1000px) rotateY(-2deg) rotateX(2deg) translateY(-10px);
         }
 
         @media (max-width: 992px) {

@@ -8,7 +8,7 @@
             <a href="#contact" class="hero-btn">Get Started for Free</a>
         </div>
         <div class="hero-image-container">
-            <!-- Mockup image will go here -->
+            <img src="assets/images/pos_mockup.png" alt="QuickPOS Software Mockup" class="hero-mockup">
         </div>
     </div>
 </section>
