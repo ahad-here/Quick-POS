@@ -270,6 +270,13 @@
             font-weight: 800;
         }
 
+        .hero-subheadline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
         .hero-image-container {
             flex: 1;
             display: flex;
