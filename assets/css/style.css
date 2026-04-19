@@ -778,32 +778,32 @@ input:checked+.slider:before {
 footer {
     background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     color: var(--white);
-    padding: 3.5rem 2rem 1.5rem;
+    padding: 2.5rem 2rem 1rem;
     border-top: 1px solid rgba(14, 165, 233, 0.1);
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 800;
     color: var(--white);
     text-decoration: none;
     display: block;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8rem;
     letter-spacing: -0.5px;
 }
 
 .social-links {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .social-icon {
@@ -848,13 +848,14 @@ footer {
 }
 
 .footer-bottom {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     color: rgba(255, 255, 255, 0.4);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
 }
 
 /* HAMBURGER */
