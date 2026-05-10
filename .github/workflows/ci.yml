@@ -1,0 +1,122 @@
+name: QuickPOS CI Pipeline
+
+on:
+  push:
+    branches: [ feature/*, bugfix/* ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PHP_VERSION: '8.2'
+
+jobs:
+  # ========== JOB 1: CODE QUALITY ==========
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔧 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+
+      - name: ✅ Syntax Check all PHP files
+        run: |
+          echo "Running PHP syntax validation..."
+          find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
+          echo "Syntax check completed!"
+
+      - name: 🔑 Validate Jira ID in commit messages
+        run: |
+          echo "Validating commit messages for Jira IDs..."
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            COMMITS=$(git log origin/main..HEAD --format=%B)
+          else
+            COMMITS=$(git log -1 --format=%B)
+          fi
+          
+          if [ -z "$COMMITS" ]; then
+            echo "No commits to check"
+            exit 0
+          fi
+          
+          echo "$COMMITS" | while IFS= read -r commit; do
+            if [[ ! "$commit" =~ \[POS-[0-9]+\] ]]; then
+              echo "❌ Commit missing Jira ID: $commit"
+              echo "✅ Valid format: [POS-123] Your commit message"
+              exit 1
+            fi
+          done
+          echo "✅ All commits have valid Jira IDs"
+
+  # ========== JOB 2: AUTOMATED TESTS ==========
+  tests:
+    runs-on: ubuntu-latest
+    needs: code-quality
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+
+      - name: 🧪 Run Test Suite
+        run: |
+          php tests/TestRunner.php
+
+      - name: 📤 Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: tests/
+
+  # ========== JOB 3: BUILD & UPLOAD ==========
+  build:
+    runs-on: ubuntu-latest
+    needs: [code-quality, tests]
+    if: success()
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Prepare build artifacts
+        run: |
+          mkdir -p build
+          cp -r *.php *.html includes/ assets/ tests/ build/ 2>/dev/null || true
+          echo "Build completed at $(date)" > build/build-info.txt
+
+      - name: 📤 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: quickpos-build
+          path: build/
+          retention-days: 7
+
+  # ========== JOB 4: STATUS CHECK ==========
+  status-check:
+    runs-on: ubuntu-latest
+    needs: [code-quality, tests, build]
+    if: always()
+    steps:
+      - name: ✅ Check overall status
+        run: |
+          if [ "${{ needs.code-quality.result }}" != "success" ]; then
+            echo "❌ Code Quality failed!"
+            exit 1
+          fi
+          if [ "${{ needs.tests.result }}" != "success" ]; then
+            echo "❌ Tests failed!"
+            exit 1
+          fi
+          if [ "${{ needs.build.result }}" != "success" ]; then
+            echo "❌ Build failed!"
+            exit 1
+          fi
+          echo "✅ All checks passed! Ready to merge."
