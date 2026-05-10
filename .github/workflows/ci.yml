@@ -30,28 +30,23 @@ jobs:
           find . -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
           echo "Syntax check completed!"
 
-      - name: 🔑 Validate Jira ID in commit messages
+      - name:  Validate Jira ID in commit messages
         run: |
-          echo "Validating commit messages for Jira IDs..."
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            COMMITS=$(git log origin/main..HEAD --format=%B)
-          else
-            COMMITS=$(git log -1 --format=%B)
-          fi
-          
-          if [ -z "$COMMITS" ]; then
-            echo "No commits to check"
-            exit 0
-          fi
-          
-          echo "$COMMITS" | while IFS= read -r commit; do
-            if [[ ! "$commit" =~ \[POS-[0-9]+\] ]]; then
-              echo "❌ Commit missing Jira ID: $commit"
-              echo "✅ Valid format: [POS-123] Your commit message"
-              exit 1
+            echo "Validating commit messages for Jira IDs..."
+            # Skip merge commits (they start with "Merge")
+            COMMITS=$(git log origin/main..HEAD --format=%B | grep -v "^Merge")
+            if [ -z "$COMMITS" ]; then
+                echo "No commits to check (or only merge commits)"
+                exit 0
             fi
-          done
-          echo "✅ All commits have valid Jira IDs"
+            echo "$COMMITS" | while IFS= read -r commit; do
+            if [[ ! "$commit" =~ \[POS-[0-9]+\] ]]; then
+                echo "❌ Commit missing Jira ID: $commit"
+                echo "✅ Valid format: [POS-123] Your commit message"
+                exit 1
+            fi
+            done
+            echo "✅ All commits have valid Jira IDs"
 
   # ========== JOB 2: AUTOMATED TESTS ==========
   tests:
