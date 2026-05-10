@@ -7,7 +7,8 @@ echo "║                    Jira: POS-200 to POS-206               ║\n";
 echo "╚════════════════════════════════════════════════════════════╝\n";
 
 $tests = [
-    'PageLoadTest.php'
+    'PageLoadTest.php',
+    'ContactValidationTest.php'
 ];
 
 $allPassed = true;
