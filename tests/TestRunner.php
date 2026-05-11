@@ -1,5 +1,5 @@
 <?php
- 
+ #as
 echo "\n";
 echo "╔════════════════════════════════════════════════════════════╗\n";
 echo "║              QUICKPOS AUTOMATED TEST SUITE                ║\n";
